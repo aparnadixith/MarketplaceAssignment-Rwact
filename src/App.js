@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React from 'react';
+import AdvertisementList from './components/AdvertisementList';
+import LexiconRed from './Images/Lexicon image.png';
 import './App.css';
 
 function App() {
+  const advertisements = [
+    {  title: 'Ad 1', description: 'This is the first advertisement.', contact: 'Contact:' },
+    {  title: 'Ad 2', description: 'This is the second advertisement.', contact: 'Contact:' },
+    {  title: 'Ad 3', description: 'This is the third advertisement.', contact: 'Contact:' },
+    {  title: 'Ad 4', description: 'This is the fourth advertisement.', contact: 'Contact:' },
+    {  title: 'Ad 5', description: 'This is the fifth advertisement.', contact: 'Contact:' },
+    {  title: 'Ad 6', description: 'This is the sixth advertisement.', contact: 'Contact:' },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <div class="card Body"style={{ backgroundColor: 'Black', color: 'white' }}>
+       <header style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
+        <img src={LexiconRed} alt="Lexicon Red Logo" height="30" width="50"/>
+        <div style={{ marginLeft: '20px', display: 'flex', alignItems: 'center' }}>
+         
+          <nav style={{ display: 'flex', gap: '20px' }}>
+            <a href="#login">Login</a>
+            <a href="#signup">Sign Up</a>
+            <a href="#about">About</a>
+          </nav>
+        </div>
       </header>
+      <h1 style={{ marginRight: '20px',backgroundColor:'Red' }}>Marketplace UI</h1>
+     <p>AdvertisementList</p>
+      <AdvertisementList advertisements={advertisements} />
+      </div>
     </div>
   );
 }
 
 export default App;
+
+
